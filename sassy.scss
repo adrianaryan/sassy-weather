@@ -1,0 +1,61 @@
+@import "normalize.css";
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: 'Roboto Slab', serif;
+$maincolor: #2194E0; //turquoise
+$margin: 2rem 0 0 2rem;
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.button {
+  margin: $margin;
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: $maincolor;
+  border: 2px solid $maincolor;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover, {
+    background-color: $maincolor;
+    color: #fff;
+    border-bottom: 4px solid darken($maincolor, 10%);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+     transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+#showWeather {
+  font-family: $roboto-slab;
+  margin: $margin;
+}
+
+h4{
+  color: #e20a5b;
+}
