@@ -1,10 +1,19 @@
 @import url(normalize.css);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+@-webkit-keyframes sheen {
+  0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0); }
+  100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em); } }
 @keyframes sheen {
   0% {
-    transform: skewY(-45deg) translateX(0); }
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0); }
   100% {
-    transform: skewY(-45deg) translateX(12.5em); } }
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em); } }
 .button {
   margin: 2rem 0 0 2rem;
   padding: 0.75em 2em;
@@ -16,6 +25,7 @@
   font-size: 24px;
   display: inline-block;
   border-radius: 0.3em;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   position: relative;
   overflow: hidden; }
@@ -28,14 +38,18 @@
     position: absolute;
     top: 0;
     left: -4.5em;
-    transform: skewX(-45deg) translateX(0);
+    -webkit-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+    -webkit-transition: none;
     transition: none; }
   .button:hover {
     background-color: #2194E0;
     color: #fff;
     border-bottom: 4px solid #1977b5; }
     .button:hover:before {
-      transform: skewX(-45deg) translateX(13.5em);
+      -webkit-transform: skewX(-45deg) translateX(13.5em);
+              transform: skewX(-45deg) translateX(13.5em);
+      -webkit-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out; }
 
 #showWeather {
@@ -44,5 +58,20 @@
 
 h4 {
   color: #e20a5b; }
+
+.seattle {
+  background: url("img/seattle.jpg") no-repeat center fixed;
+  background-size: cover;
+  color: #d52b93; }
+
+.london {
+  background: url("img/london.jpg") no-repeat center fixed;
+  background-size: cover;
+  color: #562242; }
+
+.myLocation {
+  background: url("img/udistrict.jpg") no-repeat center fixed;
+  background-size: cover;
+  color: #583c05; }
 
 /*# sourceMappingURL=sassy.css.map */
